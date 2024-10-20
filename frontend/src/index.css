@@ -1,13 +1,111 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.App {
+  text-align: center;
+
+
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/*Navbar*/
+.navbar {
+  display: flex;
+  align-items: center;
+  background-color: #9f98aa;
+  margin: 0 auto;
+ 
+
+}
+.navbar h1 {
+  color: white;
+  font-weight: bold; 
+  font-size: 24px;
+}
+.navbar .options {
+  margin-left: auto;
+}
+.navbar a {
+  margin-left: 16px;
+  text-decoration: none;
+  padding: 6px;
+}
+
+
+.content {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+button{
+  background: #815cbc;
+  margin: 0 10px; 
+  color: #fff;
+  border: 0;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold; 
+}
+
+
+.book-list {
+  display: flex;
+  flex-direction: column;
+  background-color: white
+}
+
+.cover-book {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Space between each book item */
+}
+
+.align-container {
+  display: flex;
+  background-color: #f0f0f0; /* Light background color for each item */
+  padding: 15px; /* Space inside each item */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for separation */
+}
+
+img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+.create {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+.create label {
+  text-align: left;
+  display: block;
+}
+
+
+.create input, .create textarea, .create select {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  display: block;
+}
+
+footer{
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  color:white;
+  padding-bottom: 1px;
+  column-gap: 50px;
+  padding: 25px;
+  background-color: #9f98aa;
+  font-size: 18px;
+  font-weight: bold;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
