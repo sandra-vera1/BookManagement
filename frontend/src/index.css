@@ -1,39 +1,34 @@
-.App {
-  text-align: center;
-
-
+* {
+  margin: 0;
+  padding: 0;
 }
 
 /*Navbar*/
 .navbar {
   display: flex;
+  padding: 15px;
   align-items: center;
   background-color: #9f98aa;
   margin: 0 auto;
- 
-
 }
+
 .navbar h1 {
   color: white;
   font-weight: bold; 
   font-size: 24px;
 }
+
 .navbar .options {
   margin-left: auto;
 }
+
 .navbar a {
   margin-left: 16px;
   text-decoration: none;
   padding: 6px;
 }
 
-
-.content {
-  max-width: 600px;
-  margin: 40px auto;
-  padding: 20px;
-}
-
+/*all buttons:*/
 button{
   background: #815cbc;
   margin: 0 10px; 
@@ -44,34 +39,88 @@ button{
   font-weight: bold; 
 }
 
-
+/* Collection-Collectionuser pages:*/
+/*main div*/
 .book-list {
-  display: flex;
-  flex-direction: column;
-  background-color: white
+  display: flex; 
+  flex-direction: row; 
+  justify-content: flex-start; 
+  gap: 20px; 
+  max-width: 100%; 
+  margin: 40px auto; 
+  padding: 40px;
+  box-sizing: border-box; 
 }
 
+/*filters div:*/
+.filters {
+  display: flex;
+  flex-direction: column; 
+  gap: 10px; 
+  flex: 0 0 30%; 
+}
+
+.filter-options {
+  display: flex;
+  flex-direction: column; 
+}
+
+.filter-options label {
+  margin-bottom: 25px; 
+}
+
+/* books container: */
 .cover-book {
   display: flex;
-  flex-direction: column;
-  gap: 15px; /* Space between each book item */
+  flex-direction: column; 
+  gap: 15px; 
+  flex: 1; 
+  max-width: 800px;
+  min-width: 400px; 
+  margin: 0 auto; 
+  min-height: 300px; 
 }
 
 .align-container {
   display: flex;
-  background-color: #f0f0f0; /* Light background color for each item */
-  padding: 15px; /* Space inside each item */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for separation */
+  background-color: #f0f0f0; 
+  padding: 15px; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  width: 100%; 
+  max-width: 800px; 
+  align-items: center; 
+  box-sizing: border-box; 
 }
 
 img {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  margin-right: 15px;
+  width: 160px; 
+  height: 230px; 
+  object-fit: cover; 
+  margin-right: 15px; 
 }
 
+.book-details {
+  flex: 1; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: flex-start; 
+  text-align: left; 
+  gap: 10px; 
+}
+
+.buttons {
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  margin-left: 15px; 
+}
+
+.buttons button {
+  margin: 15px 0; 
+}
+
+/*create page:*/
 .create {
   max-width: 400px;
   margin: 0 auto;
@@ -81,7 +130,6 @@ img {
   text-align: left;
   display: block;
 }
-
 
 .create input, .create textarea, .create select {
   width: 100%;

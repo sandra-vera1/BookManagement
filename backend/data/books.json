@@ -1,13 +1,5 @@
 [
   {
-    "id": 1,
-    "title": "To Kill a Mockingbird",
-    "author": "Harper Lee",
-    "description": "A novel about the serious issues of rape and racial inequality in the American South, as seen through the eyes of a child.",
-    "publicationDate": "1960-07-11",
-    "coverImage": "https://covers.openlibrary.org/b/id/8228691-L.jpg"
-  },
-  {
     "id": 2,
     "title": "1984",
     "author": "George Orwell",

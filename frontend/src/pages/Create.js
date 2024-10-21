@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Navbar from "../components/Navbar";
 
 const Create = () => {
     //state variables to manage form input values:
@@ -39,48 +40,51 @@ const Create = () => {
     };
 
     return (
-        <form className="create" onSubmit={submitForm}>
-            <h3>Add a New Book</h3>
+        <>
+        <Navbar /> {/*show Navbar*/}
+            <form className="create" onSubmit={submitForm}>
+                <h3>Add a New Book</h3>
 
-            <label>Title</label>
-            <input 
-                type="text"
-                onChange={(e) => setTitle(e.target.value)}   // Updates the 'title' state
-                value={title}
-                required
-            />
-            <label>Author</label>
-            <input 
-                type="text"
-                onChange={(e) => setAuthor(e.target.value)}  // Updates the 'author' state
-                value={author}
-                required
-            />
-            <label>Description</label>
-            <input 
-                type="text"
-                onChange={(e) => setDescription(e.target.value)}  // Updates the 'author' state
-                value={description}
-                required
-            />
-            <label>Publication Date</label>
-            <input 
-                type="date"
-                onChange={(e) => setPublicationDate(e.target.value)}  // Updates the 'author' state
-                value={publicationDate}
-                required
-            />
-            <label>Cover Image</label>
-            <input 
-                type="text"
-                onChange={(e) => setCoverImage(e.target.value)}  // Updates the 'author' state
-                value={coverImage}
-                required
-            />
-            <button>Add Book</button>
-            <Link to="/collection"><button>Book collection</button></Link>{/*go back to collection page*/}
-            
-        </form>
+                <label>Title</label>
+                <input 
+                    type="text"
+                    onChange={(e) => setTitle(e.target.value)}   // Updates the 'title' state
+                    value={title}
+                    required
+                />
+                <label>Author</label>
+                <input 
+                    type="text"
+                    onChange={(e) => setAuthor(e.target.value)}  // Updates the 'author' state
+                    value={author}
+                    required
+                />
+                <label>Description</label>
+                <input 
+                    type="text"
+                    onChange={(e) => setDescription(e.target.value)}  // Updates the 'author' state
+                    value={description}
+                    required
+                />
+                <label>Publication Date</label>
+                <input 
+                    type="date"
+                    onChange={(e) => setPublicationDate(e.target.value)}  // Updates the 'author' state
+                    value={publicationDate}
+                    required
+                />
+                <label>Cover Image</label>
+                <input 
+                    type="text"
+                    onChange={(e) => setCoverImage(e.target.value)}  // Updates the 'author' state
+                    value={coverImage}
+                    required
+                />
+                <button>Add Book</button>
+                <Link to="/collection"><button>Book collection</button></Link>{/*go back to collection page*/}
+                
+            </form>
+        </>
     );
 };
 

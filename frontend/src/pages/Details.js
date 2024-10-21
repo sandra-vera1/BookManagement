@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom"; 
+import Navbar from "../components/Navbar";
 
 const Details = () => {
     const { id } = useParams(); //get the 'id' parameter from the API
@@ -23,26 +24,29 @@ const Details = () => {
     }, [id]); // The effect runs when 'id' changes
 
     return ( 
-        <div>
-            {book && ( // If 'book' exists, display the Next details:
-                <>
-                    <h2>Book Title: {book.title}</h2>
-                        <div className="Image-container">
-                            <img src={book.coverImage} alt={book.title} />
-                        <h4>Book id - {book.id}</h4>
-                        <div className="Info-container">
-                            <p><strong>Publication Date:</strong> {book.publicationDate}</p>
-                            <p><strong>Author:</strong> {book.author}</p>
-                            <p><strong>Description:</strong> {book.description}</p> 
-                            
-                            {/*PENDING add validation if user=Admin go to Collection, else 
-                            go to Collectionuser*/}
-                            <Link to="/collection"><button>Book collection</button></Link>{/*go back to collection page*/}
+        <>
+        <Navbar /> {/*show Navbar*/}
+            <div>
+                {book && ( // If 'book' exists, display the Next details:
+                    <>
+                        <h2>Book Title: {book.title}</h2>
+                            <div className="Image-container">
+                                <img src={book.coverImage} alt={book.title} />
+                            <h4>Book id - {book.id}</h4>
+                            <div className="Info-container">
+                                <p><strong>Publication Date:</strong> {book.publicationDate}</p>
+                                <p><strong>Author:</strong> {book.author}</p>
+                                <p><strong>Description:</strong> {book.description}</p> 
+                                
+                                {/*PENDING add validation if user=Admin go to Collection, else 
+                                go to Collectionuser*/}
+                                <Link to="/collection"><button>Book collection</button></Link>{/*go back to collection page*/}
+                            </div>
                         </div>
-                    </div>
-                </>
-            )}
-        </div>
+                    </>
+                )}
+            </div>
+        </>
     );
 };
 
