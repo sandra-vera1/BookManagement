@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory} from "react-router-dom";
 import Navbar from "../components/Navbar";
+import Logo from "../components/Logo";
 
 const Create = () => {
     //state variables to manage form input values:
@@ -9,6 +10,7 @@ const Create = () => {
     const [description, setDescription] = useState(''); //store the description
     const [publicationDate, setPublicationDate] = useState(''); //store the publication date
     const [coverImage, setCoverImage] = useState(''); //store the cover image URL
+    const history = useHistory();
 
     //function to handle the submition form:
     const submitForm = async (e) => {
@@ -28,7 +30,7 @@ const Create = () => {
         // Handle successful creation from the server:
         if (response.ok) {
             const json = await response.json(); // the response body
-            console.log('New book added:', json, 'Status Code:', response.status); // Log success message
+            //console.log('New book added:', json, 'Status Code:', response.status); // Log success message
             // Clear fields after successful addition
             setTitle('');
             setAuthor('');
@@ -36,12 +38,14 @@ const Create = () => {
             setPublicationDate('');
             setCoverImage('');
             console.log('New book added:', json, 'Status Code:', response.status); 
+            history.push('/');
         }
     };
 
     return (
         <>
         <Navbar /> {/*show Navbar*/}
+        <Logo />
             <form className="create" onSubmit={submitForm}>
                 <h3>Add a New Book</h3>
 
@@ -80,9 +84,9 @@ const Create = () => {
                     value={coverImage}
                     required
                 />
-                <button>Add Book</button>
-                <Link to="/collection"><button>Book collection</button></Link>{/*go back to collection page*/}
-                
+                <Link to="/collection"> 
+                <button className="btn btn-primary d-inline-flex align-items-center">Add Book</button>
+                </Link>
             </form>
         </>
     );

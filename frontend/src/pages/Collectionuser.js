@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom"; // Import Link and useHistory for navigation
 import Navbar from "../components/Navbar";
+import Logo from "../components/Logo";
 
 const Collectionuser = () => {
     const [books, setBooks] = useState([]); // Initializes the 'book' state as null to store book data later
@@ -21,8 +22,7 @@ const Collectionuser = () => {
 
             if (response.ok) { // If the response status is 200 (success)
                 setBooks(json); // Update the state with fetched book data
-                //test:
-                console.log('Book details fetched:', json, 'Status Code: 200 OK');
+                //console.log('Book details fetched:', json, 'Status Code: 200 OK');
             }
         };
         fetchBooks(); // Call the function to load books when component loads
@@ -68,7 +68,8 @@ const Collectionuser = () => {
 
     return (
         <>
-            <Navbar /> {/*show Navbar*/}
+            <Navbar /> 
+            <Logo />
             <div className="book-list">
                 <div className="filters"> {/* Container for the search input and filter options */}
                     <input 
@@ -115,7 +116,7 @@ const Collectionuser = () => {
                             Publication Date
                         </label>
                     </div>
-                    <button onClick={handleSearch}>Search</button> {/* Button to do the search */}
+                    <button className="btn btn-primary d-inline-flex align-items-center" onClick={handleSearch}>Search</button> {/* Button to do the search */}
                 </div>
                 <div className="cover-book">
                     {searchTriggered && filteredBooks.length === 0 ? (  // Map over filtered or original books
@@ -127,12 +128,12 @@ const Collectionuser = () => {
                                     <img src={book.coverImage} alt={book.title} />
                                 </div>
                                 <div className="book-details">
-                                    <h4>Title:{book.title}</h4>
+                                    <p><strong>Title:</strong> {book.title}</p>
                                     <p><strong>Author:</strong> {book.author}</p>
                                 </div>
                                 <div className="buttons">
                                     <Link to={`/Details/${book.id}`}>
-                                        <button>Details</button>
+                                        <button className="btn btn-primary d-inline-flex align-items-center">Details</button>
                                     </Link>
                                 </div>
                             </div>

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom"; 
 import Navbar from "../components/Navbar";
+import Logo from "../components/Logo"
 
 const Details = () => {
     const { id } = useParams(); //get the 'id' parameter from the API
@@ -26,26 +27,26 @@ const Details = () => {
     return ( 
         <>
         <Navbar /> {/*show Navbar*/}
-            <div>
-                {book && ( // If 'book' exists, display the Next details:
-                    <>
-                        <h2>Book Title: {book.title}</h2>
-                            <div className="Image-container">
-                                <img src={book.coverImage} alt={book.title} />
-                            <h4>Book id - {book.id}</h4>
-                            <div className="Info-container">
-                                <p><strong>Publication Date:</strong> {book.publicationDate}</p>
-                                <p><strong>Author:</strong> {book.author}</p>
-                                <p><strong>Description:</strong> {book.description}</p> 
-                                
-                                {/*PENDING add validation if user=Admin go to Collection, else 
-                                go to Collectionuser*/}
-                                <Link to="/collection"><button>Book collection</button></Link>{/*go back to collection page*/}
-                            </div>
-                        </div>
-                    </>
-                )}
-            </div>
+        <Logo />
+        <div className="create"> {/* Reuse the class for styling */}
+            {book && ( // If 'book' exists, display the details:
+                <div className="details-container"> {/* New container for layout */}
+                    <div className="image-container"> {/* Image container */}
+                        <img src={book.coverImage} alt={book.title} />
+                    </div>
+                    <div className="info-container"> {/* Info container */}
+                        <p><strong>Book Title:</strong> {book.title}</p>
+                        <p><strong>Book ID:</strong> {book.id}</p>
+                        <p><strong>Publication Date:</strong> {book.publicationDate}</p>
+                        <p><strong>Author:</strong> {book.author}</p>
+                        <p><strong>Description:</strong> {book.description}</p> 
+                        <Link to="/collection">
+                            <button className="btn btn-primary">Book Collection</button> {/* Reuse button styles */}
+                        </Link> {/* Go back to collection page */}
+                    </div>
+                </div>
+            )}
+        </div>
         </>
     );
 };

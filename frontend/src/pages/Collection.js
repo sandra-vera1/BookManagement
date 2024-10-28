@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom"; // Import Link and useHistory for navigation
 import Navbar from "../components/Navbar";
+import Logo from "../components/Logo";
 
 const Collection = () => {
     const [books, setBooks] = useState([]); // Initializes the 'book' state as null to store book data later
@@ -38,8 +39,7 @@ const Collection = () => {
         if (response.ok) { // If deletion is successful. status code "204 No Content": 
             //Delete and update the local books state to delete the book
             setBooks(books.filter(b => b.id !== book.id)); // Remove the deleted book from the state
-            //test:
-            console.log(`Book deleted: ${book.id}, Status Code: ${response.status}`); 
+            //console.log(`Book deleted: ${book.id}, Status Code: ${response.status}`); 
         } else {
             const json = await response.json(); // if there are any error: // Get error message from server
             if (response.status === 401) {
@@ -90,7 +90,8 @@ const Collection = () => {
 
     return (
         <>
-        <Navbar /> {/*show Navbar*/}
+        <Navbar /> 
+        <Logo />
             <div className="book-list">
                 
                 <div className="filters"> {/* Container for the search input and filter options */}
@@ -138,7 +139,7 @@ const Collection = () => {
                             Publication Date
                         </label>
                     </div>
-                    <button onClick={handleSearch}>Search</button> {/* Button to do the search */}
+                    <button className="btn btn-primary d-inline-flex align-items-center btnsearch" onClick={handleSearch}>Search</button> {/* Button to do the search */}
                 </div>
                 <div className="cover-book">
                     {searchTriggered && filteredBooks.length === 0 ? (  // Map over filtered or original books
@@ -150,17 +151,17 @@ const Collection = () => {
                                     <img src={book.coverImage} alt={book.title} />
                                 </div>
                                 <div className="book-details">
-                                    <h4>Title:{book.title}</h4>
+                                    <p><strong>Title:</strong> {book.title}</p>
                                     <p><strong>Author:</strong> {book.author}</p>
                                 </div>
                                 <div className="buttons">
                                     <Link to={`/Details/${book.id}`}>
-                                        <button>Details</button>
+                                        <button className="btn btn-primary d-inline-flex align-items-center">Details</button>
                                     </Link>
                                     <Link to={`/Edit/${book.id}`}>
-                                        <button>Edit</button>
+                                        <button className="btn btn-primary d-inline-flex align-items-center">Edit</button>
                                     </Link>
-                                    <button onClick={() => handleDelete(book)}>Delete</button>
+                                    <button className="btn btn-primary d-inline-flex align-items-center" onClick={() => handleDelete(book)}>Delete</button>
                                 </div>
                             </div>
                         ))

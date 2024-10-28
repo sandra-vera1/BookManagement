@@ -6,12 +6,12 @@ const Login = () => {
         <div>
             {/* Use Link to navigate to /collection on button click */}
             <Link to="/Collection">
-                <button>Login</button>
+                <button className="btn btn-primary d-inline-flex align-items-center">Login</button>
             </Link>
 
             {/* Use Link to navigate to /collection on button click */}
             <Link to="/Collectionuser">
-                <button>any user</button>
+                <button className="btn btn-primary d-inline-flex align-items-center">any user</button>
             </Link>
 
         </div>

@@ -1,29 +1,5 @@
 [
   {
-    "id": 2,
-    "title": "1984",
-    "author": "George Orwell",
-    "description": "A dystopian novel set in a totalitarian regime that practices extreme surveillance and control.",
-    "publicationDate": "1949-06-08",
-    "coverImage": "https://books.google.ca/books/publisher/content?id=ixrmEAAAQBAJ&pg=PP1&img=1&zoom=3&hl=en&bul=1&sig=ACfU3U2i4J0LPEcfbGG-bfHTZz_EEUNjlw&w=1280"
-  },
-  {
-    "id": 3,
-    "title": "The Great Gatsby",
-    "author": "F. Scott Fitzgerald",
-    "description": "A story about the young and mysterious millionaire Jay Gatsby and his obsession with the beautiful former debutante Daisy Buchanan.",
-    "publicationDate": "1925-04-10",
-    "coverImage": "https://books.google.ca/books/content?id=HestSXO362YC&pg=PP1&img=1&zoom=3&hl=en&bul=1&sig=ACfU3U0M7yu-bMY2SEwFfdTgPn3DOvCvDQ&w=1280"
-  },
-  {
-    "id": 4,
-    "title": "Pride and Prejudice",
-    "author": "Jane Austen",
-    "description": "A romantic novel that charts the emotional development of the protagonist Elizabeth Bennet.",
-    "publicationDate": "1813-01-28",
-    "coverImage": "https://books.google.ca/books/content?id=kQ0mAAAAMAAJ&pg=PP1&img=1&zoom=3&hl=en&bul=1&sig=ACfU3U37zPGoOr2IU2f0PCVIexnC5nPGag&w=1280"
-  },
-  {
     "id": 5,
     "title": "Moby-Dick",
     "author": "Herman Melville",
@@ -390,5 +366,21 @@
     "description": "A spiritual novel that follows the journey of a young man in ancient India seeking enlightenment.",
     "publicationDate": "1922-09-06",
     "coverImage": "https://books.google.ca/books/content?id=putbK6p2o4sC&pg=PP1&img=1&zoom=3&hl=en&bul=1&sig=ACfU3U2HtTGnl5eABPpeH0BUEC5nh3lRWQ&w=1280"
+  },
+  {
+    "id": 51,
+    "title": "cuentos",
+    "author": "Paula",
+    "description": "Tell stories ",
+    "publicationDate": "2012-01-28",
+    "coverImage": "https://books.google.ca/books/content?id=nUWhr92gc1kC&pg=PP1&img=1&zoom=3&hl=en&bul=1&sig=ACfU3U0Y55Sozy7HddLsdJsujE92Thl1AA&w=1280"
+  },
+  {
+    "id": 52,
+    "title": "cuentos2",
+    "author": "paula",
+    "description": "tell stories",
+    "publicationDate": "2024-10-30",
+    "coverImage": "https://books.google.ca/books/content?id=nUWhr92gc1kC&pg=PP1&img=1&zoom=3&hl=en&bul=1&sig=ACfU3U0Y55Sozy7HddLsdJsujE92Thl1AA&w=1280"
   }
 ]
