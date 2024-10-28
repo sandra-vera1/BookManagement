@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link, useHistory} from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Logo from "../components/Logo";
 
@@ -10,7 +9,6 @@ const Create = () => {
     const [description, setDescription] = useState(''); //store the description
     const [publicationDate, setPublicationDate] = useState(''); //store the publication date
     const [coverImage, setCoverImage] = useState(''); //store the cover image URL
-    const history = useHistory();
 
     //function to handle the submition form:
     const submitForm = async (e) => {
@@ -38,7 +36,6 @@ const Create = () => {
             setPublicationDate('');
             setCoverImage('');
             console.log('New book added:', json, 'Status Code:', response.status); 
-            history.push('/');
         }
     };
 
@@ -84,9 +81,7 @@ const Create = () => {
                     value={coverImage}
                     required
                 />
-                <Link to="/collection"> 
                 <button className="btn btn-primary d-inline-flex align-items-center">Add Book</button>
-                </Link>
             </form>
         </>
     );
