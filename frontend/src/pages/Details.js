@@ -40,7 +40,7 @@ const Details = () => {
                         <p><strong>Publication Date:</strong> {book.publicationDate}</p>
                         <p><strong>Author:</strong> {book.author}</p>
                         <p><strong>Description:</strong> {book.description}</p> 
-                        <Link to="/collection">
+                        <Link to="/">
                             <button className="btn btn-primary">Book Collection</button> {/* Reuse button styles */}
                         </Link> {/* Go back to collection page */}
                     </div>

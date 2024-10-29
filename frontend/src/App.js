@@ -21,10 +21,10 @@ function App() {
         <div className="content">
           <Switch>
             <Route exact path="/">
-              <Login />
+            <Collection />
             </Route>
-            <Route path="/Collection">
-              <Collection />
+            <Route path="/Login">
+              <Login />
             </Route>
             <Route path="/Collectionuser">
               <Collectionuser />

@@ -101,7 +101,7 @@ const Edit = () => {
                             onChange={(e) => setCoverImage(e.target.value)} // Update cover image state on change
                             required
                         />
-                        <Link to="/collection">
+                        <Link to="/">
                         <button className="btn btn-primary d-inline-flex align-items-center" onClick={handleUpdateBook}>Update Book</button> {/* Button to trigger book update */}
                         </Link>
                     </div>

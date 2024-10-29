@@ -21,8 +21,11 @@ const Collection = () => {
             const response = await fetch('/books');// Fetch all books from the server API
             const json = await response.json();// Convert the response data to JSON
 
+            
             if (response.ok) { // If the response status is 200 (success)
-                setBooks(json); // Update the state with fetched book data
+                //setBooks(json); // Update the state with fetched book data
+                const sortedBooks = json.sort((a, b) => b.id - a.id);//sort books in descending order.
+                setBooks(sortedBooks); // Update the state with sorted book data
                 //test:
                 console.log('Book details fetched:', json, 'Status Code: 200 OK');
             }

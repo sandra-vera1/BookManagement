@@ -23,6 +23,7 @@ const Navbar = () => {
 
         <div className="text-end">
         <Link to="/Create"><button type="button" className="btn btn-outline-light me-2">Add New book</button></Link>
+        <Link to="/Login"><button type="button" className="btn btn-outline-light me-2">Login</button></Link>
         <button type="button" className="btn btn-warning">Logout</button>
         </div>
       </div>
