@@ -6,7 +6,7 @@ const Logo = () => {
         <nav className="navbar bg-body-tertiary p-0">
         <div className="container d-flex justify-content-center">
             <Link to="/">
-                <img src={sunbook} alt="Bootstrap" width="50" height="24" className="d-block" />
+                    <img src={sunbook} class="img-fluid" className="d-block" />
             </Link>
         </div>
     </nav>

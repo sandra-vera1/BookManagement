@@ -100,7 +100,7 @@ const Collection = () => {
                 <div className="filters"> {/* Container for the search input and filter options */}
                     <input 
                         type="text" 
-                        placeholder="Search books" 
+                        placeholder="           Search books" 
                         value={search} 
                         onChange={(e) => setSearch(e.target.value)} 
                     />
@@ -111,8 +111,7 @@ const Collection = () => {
                                 name="titleFilter" 
                                 checked={filterOptions.titleFilter} 
                                 onChange={FilterChange} 
-                            />
-                            Title
+                            />&nbsp;Title
                         </label>
                         <label>
                             <input 
@@ -121,7 +120,7 @@ const Collection = () => {
                                 checked={filterOptions.authorFilter} 
                                 onChange={FilterChange} 
                             />
-                            Author
+                            &nbsp;Author
                         </label>
                         <label>
                             <input 
@@ -130,7 +129,7 @@ const Collection = () => {
                                 checked={filterOptions.descriptionFilter} 
                                 onChange={FilterChange} 
                             />
-                            Keyword
+                            &nbsp;Keyword
                         </label>
                         <label>
                             <input 
@@ -139,7 +138,7 @@ const Collection = () => {
                                 checked={filterOptions.dateFilter} 
                                 onChange={FilterChange} 
                             />
-                            Publication Date
+                            &nbsp;Publication Date
                         </label>
                     </div>
                     <button className="btn btn-primary d-inline-flex align-items-center btnsearch" onClick={handleSearch}>Search</button> {/* Button to do the search */}
