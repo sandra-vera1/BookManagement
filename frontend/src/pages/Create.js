@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
+import { Link } from "react-router-dom";
 import Logo from "../components/Logo";
 
 const Create = () => {
@@ -81,8 +82,14 @@ const Create = () => {
                     value={coverImage}
                     required
                 />
+                <br></br>
                 <button className="btn btn-primary d-inline-flex align-items-center">Add Book</button>
+                &nbsp;
+                <Link to="/">
+                    <button className="btn btn-primary">Back Collection</button> {/* Reuse button styles */}
+                </Link> {/* Go back to collection page */}
             </form>
+            
         </>
     );
 };

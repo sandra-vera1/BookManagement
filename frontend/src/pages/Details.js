@@ -41,7 +41,7 @@ const Details = () => {
                         <p><strong>Author:</strong> {book.author}</p>
                         <p><strong>Description:</strong> {book.description}</p> 
                         <Link to="/">
-                            <button className="btn btn-primary">Book Collection</button> {/* Reuse button styles */}
+                            <button className="btn btn-primary">Back Collection</button> {/* Reuse button styles */}
                         </Link> {/* Go back to collection page */}
                     </div>
                 </div>
