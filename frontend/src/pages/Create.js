@@ -83,7 +83,7 @@ const Create = () => {
                     required
                 />
                 <br></br>
-                <button className="btn btn-primary d-inline-flex align-items-center">Add Book</button>
+                <button className="btn btn-primary">Add Book</button>
                 &nbsp;
                 <Link to="/">
                     <button className="btn btn-primary">Back Collection</button> {/* Reuse button styles */}

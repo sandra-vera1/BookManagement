@@ -57,6 +57,7 @@ footer {
   margin: 40px auto; 
   padding: 40px;
   box-sizing: border-box; 
+  flex-wrap: wrap;
 }
 
 /*filters div:*/
@@ -79,7 +80,7 @@ footer {
  }
 
 .btnsearch {
-    max-width: 100px; /* Establece un ancho máximo */
+    max-width: 100px; 
     width: auto;
     justify-content: center;
 }
@@ -105,6 +106,7 @@ footer {
   max-width: 800px; 
   align-items: center; 
   box-sizing: border-box; 
+  flex-wrap: wrap;
 }
 
 img {
@@ -112,6 +114,7 @@ img {
   height: 230px; 
   object-fit: cover; 
   margin-right: 15px; 
+  flex-shrink: 0;
 }
 
 .book-details {
@@ -144,6 +147,8 @@ img {
   max-width: 400px;
   margin: 0 auto;
   text-align: center;
+  padding-bottom: 50px;
+  padding-top: 20px;
 }
 .create label {
   text-align: left;
@@ -159,22 +164,76 @@ img {
   display: block;
 }
 
+.create button{
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
 /*Edit page:*/
 .details-container {
-  display: flex; 
-  align-items: flex-start; 
-  margin-top: 20px; 
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.details-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
 .image-container {
-  flex: 1; /* Allow the image container to take available space */
-  max-width: 200px; /* Set a max width for the image */
-  margin-right: 20px; /* Spacing between image and info */
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-wrapper {
+  width: 100%;
+  max-width: 300px;
+  padding: 20px;
+  background-color: #243b77;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 .info-container {
-  flex: 2; /* Allow the info container to take more space */
-  text-align: left; /* Align text to the left */
+  flex: 2;
+  max-width: 600px;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.info-container h2 {
+  font-size: 2rem;
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 20px;
+}
+
+.info-container p {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.image-container {
+  flex: 1; 
+  max-width: 200px; 
+  margin-right: 20px; 
+}
+
+.info-container {
+  flex: 2; 
+  text-align: left; 
 }
 
 .login-container {
@@ -202,4 +261,95 @@ img {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     width: 300px;
+}
+
+@media (max-width: 600px) {
+  .create {
+    padding: 20px; 
+    max-width: 100%; 
+  }
+
+  .create label, .create input, .create textarea {
+    font-size: 14px; 
+  }
+
+  .create button {
+    width: 100%; 
+    padding: 10px; 
+  }
+}
+
+@media (max-width: 768px) {
+  .details-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image-container, .info-container {
+    flex: 1;
+    width: 100%;
+  }
+
+  .image-wrapper {
+    max-width: 80%;
+  }
+
+  .info-container {
+    max-width: 100%;
+    text-align: center;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .book-list {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .align-container {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  img {
+    width: 120px; 
+    height: 160px;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .book-details {
+    align-items: center; 
+    text-align: center;
+  }
+
+  .buttons {
+    margin-top: 10px;
+  }
+
+  .filters {
+    width: 100%;
+    max-width: none;
+  }
+
+  .btnsearch {
+    width: 100%;
+    max-width: none; 
+  }
+}
+
+@media (max-width: 480px) {
+  .book-list {
+    padding: 10px;
+  }
+
+  .filter-options label {
+    margin-bottom: 10px; 
+  }
+
+  .buttons button {
+    width: 100%; 
+    margin-bottom: 10px; 
+  }
 }

@@ -28,15 +28,17 @@ const Details = () => {
         <>
         <Navbar /> {/*show Navbar*/}
         <Logo />
-        <div className="create"> {/* Reuse the class for styling */}
+        <div className="details-container"> {/* Reuse the class for styling */}
             {book && ( // If 'book' exists, display the details:
-                <div className="details-container"> {/* New container for layout */}
+                <div className="details-content"> {/* New container for layout */}
                     <div className="image-container"> {/* Image container */}
-                        <img src={book.coverImage} alt={book.title} />
+                        <div className="image-wrapper">
+                            <img src={book.coverImage} alt={book.title} />
+                        </div>
                     </div>
                     <div className="info-container"> {/* Info container */}
-                        <p><strong>Book Title:</strong> {book.title}</p>
-                        <p><strong>Book ID:</strong> {book.id}</p>
+                        <p><strong>Title:</strong> {book.title}</p>
+                        <p><strong>Id:</strong> {book.id}</p>
                         <p><strong>Publication Date:</strong> {book.publicationDate}</p>
                         <p><strong>Author:</strong> {book.author}</p>
                         <p><strong>Description:</strong> {book.description}</p> 

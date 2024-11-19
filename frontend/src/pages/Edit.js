@@ -102,7 +102,7 @@ const Edit = () => {
                             required
                         />
                         <Link to="/">
-                        <button className="btn btn-primary d-inline-flex align-items-center" onClick={handleUpdateBook}>Update Book</button> {/* Button to trigger book update */}
+                        <button className="btn btn-primary" onClick={handleUpdateBook}>Update Book</button> {/* Button to trigger book update */}
                         </Link>
                     </div>
                 )}
