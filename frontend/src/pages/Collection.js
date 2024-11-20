@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom"; // Import Link and useHistory for navigation
 import Navbar from "../components/Navbar";
 import Logo from "../components/Logo";
+import ErrorMessage from './ErrorMessage'; // Import the ErrorMessage component
 
 const Collection = () => {
     const [books, setBooks] = useState([]); // Initializes the 'book' state as null to store book data later
@@ -17,7 +18,8 @@ const Collection = () => {
     const [searchTriggered, setSearchTriggered] = useState(false); // State to track if search has been clicked
     const [statusSession, setStatusSession] = useState(null); // To track user's login status
     const history = useHistory(); // For redirection if user is not logged in
-
+    const [errorMessage, setErrorMessage] = useState(null); // To store error messages
+    try {
     useEffect(() => {
         // Check the session status from localStorage
         const savedSession = localStorage.getItem('statusSession');
@@ -27,6 +29,7 @@ const Collection = () => {
             setStatusSession(false);
         }
 
+   
         // Fetch books after checking session status
         const fetchBooks = async () => {
             const response = await fetch('/books'); // Fetch all books from the server API
@@ -41,6 +44,12 @@ const Collection = () => {
 
         fetchBooks(); // Call the function to load books when component loads
     }, []); // The empty dependency array ensures it only runs once when the component mounts
+
+    } catch (error) {
+        // Catch any errors during the fetch or unexpected errors
+        setErrorMessage(`Error: ${error.message}`);
+    }
+
 
     // Function to delete a book
     const handleDelete = async (book) => {
@@ -176,7 +185,7 @@ const Collection = () => {
                                             <Link to={`/Edit/${book.id}`}>
                                                 <button className="btn btn-primary d-inline-flex align-items-center">Edit</button>
                                             </Link>
-                                            <button className="btn btn-danger d-inline-flex align-items-center" onClick={() => handleDelete(book)}>Delete</button>
+                                            <button className="btn btn-primary d-inline-flex align-items-center" onClick={() => handleDelete(book)}>Delete</button>
                                         </>
                                     )}
                                 </div>
@@ -184,7 +193,9 @@ const Collection = () => {
                         ))
                     )}
                 </div>
-                {error && <div className="error">{error}</div>}
+                {/* Display error message if an error exists */}
+                {errorMessage && <ErrorMessage message={errorMessage} onClose={() => setErrorMessage(null)} />}
+                {error && <ErrorMessage message={error} onClose={() => setErrorMessage(null)} />}
             </div>
         </>
     );

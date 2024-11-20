@@ -360,43 +360,27 @@
     "coverImage": "https://books.google.ca/books/content?id=putbK6p2o4sC&pg=PP1&img=1&zoom=3&hl=en&bul=1&sig=ACfU3U2HtTGnl5eABPpeH0BUEC5nh3lRWQ&w=1280"
   },
   {
-    "id": 51,
-    "title": "cuentos",
-    "author": "Paula",
-    "description": "Tell stories ",
-    "publicationDate": "2012-01-28",
-    "coverImage": "https://books.google.ca/books/content?id=nUWhr92gc1kC&pg=PP1&img=1&zoom=3&hl=en&bul=1&sig=ACfU3U0Y55Sozy7HddLsdJsujE92Thl1AA&w=1280"
-  },
-  {
-    "id": 52,
-    "title": "cuentos2",
-    "author": "paula",
-    "description": "tell stories",
-    "publicationDate": "2024-10-30",
-    "coverImage": "https://books.google.ca/books/content?id=nUWhr92gc1kC&pg=PP1&img=1&zoom=3&hl=en&bul=1&sig=ACfU3U0Y55Sozy7HddLsdJsujE92Thl1AA&w=1280"
-  },
-  {
-    "id": 53,
-    "title": "music",
-    "author": "paula",
-    "description": "show music",
-    "publicationDate": "2015-11-11",
-    "coverImage": "https://books.google.ca/books/content?id=nUWhr92gc1kC&pg=PP1&img=1&zoom=3&hl=en&bul=1&sig=ACfU3U0Y55Sozy7HddLsdJsujE92Thl1AA&w=1280"
-  },
-  {
     "id": 54,
-    "title": "Music",
-    "author": "paula",
-    "description": "music book",
-    "publicationDate": "2014-11-12",
-    "coverImage": "https://books.google.ca/books/content?id=putbK6p2o4sC&pg=PP1&img=1&zoom=3&hl=en&bul=1&sig=ACfU3U2HtTGnl5eABPpeH0BUEC5nh3lRWQ&w=1280"
+    "title": "I Heard There Was A Secret Chord: Music as Medicine",
+    "author": "Daniel Levitin",
+    "description": "Music is perhaps one of humanity’s oldest medicines as well as its most universal: from China to the Ottoman Empire, Europe to Africa and pre-colonial South America, cultures have developed rich traditions for using sound and rhythm to ease suffering, spur healing, and calm the mind. Despite this history, musical therapy has long been considered the remit of ancient practice and alternative medicine, if not outright quackery and pseudoscience. In the last decade, however, an overwhelming body of scientific evidence has emerged that persuasively argues music can offer profoundly effective treatment for a whole host of ailments, from Alzheimer’s to PTSD, depression, pain, and cognitive injury. It is, in short, one of the most potent and remarkably promising new therapies available today.",
+    "publicationDate": "2024-08-27",
+    "coverImage": "https://m.media-amazon.com/images/I/41vW1sqtnRL._SY445_SX342_.jpg"
   },
   {
     "id": 56,
-    "title": "Black arrow",
-    "author": "Sandra Vera Gomez",
-    "description": "The book for test.",
-    "publicationDate": "2024-11-18",
-    "coverImage": "https://th.bing.com/th/id/OIP.pPk4b_cogt9Dl7PV0AXuDwHaMF?rs=1&pid=ImgDetMain"
+    "title": "One Hundred Years of Solitude",
+    "author": "Gabriel Garcia Marquez",
+    "description": "One Hundred Years of Solitude tells the story of the rise and fall, birth and death of the mythical town of Macondo through the history of the Buendía family. Inventive, amusing, magnetic, sad, and alive with unforgettable men and women -- brimming with truth, compassion, and a lyrical magic that strikes the soul -- this novel is a masterpiece in the art of fiction.",
+    "publicationDate": "2006-02-21",
+    "coverImage": "https://m.media-amazon.com/images/I/91TvVQS7loL._SY466_.jpg"
+  },
+  {
+    "id": 57,
+    "title": "Harry Potter and the Philosopher's Stone",
+    "author": "J.K. Rowling",
+    "description": "Harry Potter has never even heard of Hogwarts when the letters start dropping on the doormat at number four, Privet Drive. Addressed in green ink on yellowish parchment with a purple seal, they are swiftly confiscated by his grisly aunt and uncle. Then, on Harry's eleventh birthday, a great beetle-eyed giant of a man called Rubeus Hagrid bursts in with some astonishing news: Harry Potter is a wizard, and he has a place at Hogwarts School of Witchcraft and Wizardry. ",
+    "publicationDate": "2014-09-16",
+    "coverImage": "https://m.media-amazon.com/images/I/81q77Q39nEL._SY466_.jpg"
   }
 ]

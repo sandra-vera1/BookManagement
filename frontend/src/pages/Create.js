@@ -2,6 +2,7 @@ import { useState } from "react";
 import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
 import Logo from "../components/Logo";
+import ErrorMessage from './ErrorMessage'; // Import the ErrorMessage component
 
 const Create = () => {
     //state variables to manage form input values:
@@ -10,13 +11,14 @@ const Create = () => {
     const [description, setDescription] = useState(''); //store the description
     const [publicationDate, setPublicationDate] = useState(''); //store the publication date
     const [coverImage, setCoverImage] = useState(''); //store the cover image URL
+    const [errorMessage, setErrorMessage] = useState(null); // To store error messages
 
     //function to handle the submition form:
     const submitForm = async (e) => {
         e.preventDefault();
 
         const book = { title, author, description, publicationDate, coverImage };// Creates a new book object with input values
-
+    try {
         // Sends a POST request to the API(http://localhost:7000/books/) to add a new book:
         const response = await fetch('/books', {
             method: 'POST',
@@ -36,8 +38,14 @@ const Create = () => {
             setDescription('');
             setPublicationDate('');
             setCoverImage('');
-            console.log('New book added:', json, 'Status Code:', response.status); 
+            console.log('New book added:', json, 'Status Code:', response.status);
         }
+
+    } catch (error) {
+        // Catch any errors during the fetch or unexpected errors
+        setErrorMessage(`Error: ${error.message}`);
+    }
+
     };
 
     return (
@@ -86,9 +94,11 @@ const Create = () => {
                 <button className="btn btn-primary">Add Book</button>
                 &nbsp;
                 <Link to="/">
-                    <button className="btn btn-primary">Back Collection</button> {/* Reuse button styles */}
+                    <button className="btn btn-primary">Back Collection</button>
                 </Link> {/* Go back to collection page */}
             </form>
+            {/* Display error message if an error exists */}
+            {errorMessage && <ErrorMessage message={errorMessage} onClose={() => setErrorMessage(null)} />}
             
         </>
     );

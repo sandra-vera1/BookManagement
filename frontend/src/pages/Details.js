@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom"; 
 import Navbar from "../components/Navbar";
-import Logo from "../components/Logo"
+import Logo from "../components/Logo";
+import ErrorMessage from './ErrorMessage'; // Import the ErrorMessage component
 
 const Details = () => {
     const { id } = useParams(); //get the 'id' parameter from the API
     const [book, setBook] = useState(null); // Initializes the 'book' state as null to store book data later
-
+    const [errorMessage, setErrorMessage] = useState(null); // To store error messages
+    try {
     useEffect(() => {
         // Fetch the book data from the API when the component is rendered or when 'id' changes:
         const fetchBooks = async () => {
@@ -23,7 +25,10 @@ const Details = () => {
         };
         fetchBooks(); // Call the function to fetch books
     }, [id]); // The effect runs when 'id' changes
-
+    } catch (error) {
+        // Catch any errors during the fetch or unexpected errors
+        setErrorMessage(`Error: ${error.message}`);
+    }
     return ( 
         <>
         <Navbar /> {/*show Navbar*/}
@@ -43,11 +48,13 @@ const Details = () => {
                         <p><strong>Author:</strong> {book.author}</p>
                         <p><strong>Description:</strong> {book.description}</p> 
                         <Link to="/">
-                            <button className="btn btn-primary">Back Collection</button> {/* Reuse button styles */}
+                            <button className="btn btn-primary">Back Collection</button>
                         </Link> {/* Go back to collection page */}
                     </div>
                 </div>
-            )}
+                )}
+                {/* Display error message if an error exists */}
+                {errorMessage && <ErrorMessage message={errorMessage} onClose={() => setErrorMessage(null)} />}
         </div>
         </>
     );

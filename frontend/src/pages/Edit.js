@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom"; 
 import Navbar from "../components/Navbar"; 
 import Logo from "../components/Logo";
+import ErrorMessage from './ErrorMessage'; // Import the ErrorMessage component
 
 const Edit = () => {
     const { id } = useParams(); // Get the 'id' parameter from the URL
@@ -11,6 +12,8 @@ const Edit = () => {
     const [description, setDescription] = useState(''); // State for the book description
     const [publicationDate, setPublicationDate] = useState(''); // State for the publication date
     const [coverImage, setCoverImage] = useState(''); // State for the book cover image
+    const [errorMessage, setErrorMessage] = useState(null); // To store error messages
+
 
     useEffect(() => {
         // Fetch book data from the API
@@ -55,7 +58,7 @@ const Edit = () => {
                 throw new Error('Failed to update the book'); // Throw an error if update fails
             }
         } catch (error) {
-            //console.error('Error updating book:', error); // Log any errors encountered
+            setErrorMessage(`Error: ${error.message}`);
         }
     };
 
@@ -104,8 +107,14 @@ const Edit = () => {
                         <Link to="/">
                         <button className="btn btn-primary" onClick={handleUpdateBook}>Update Book</button> {/* Button to trigger book update */}
                         </Link>
+                        &nbsp;
+                        <Link to="/">
+                            <button className="btn btn-primary">Back Collection</button>
+                        </Link> {/* Go back to collection page */}
                     </div>
                 )}
+                {/* Display error message if an error exists */}
+                {errorMessage && <ErrorMessage message={errorMessage} onClose={() => setErrorMessage(null)} />}
             </div>
         </>
     );

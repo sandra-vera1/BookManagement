@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom"; //han
 
 //pages:
 import Collection from './pages/Collection';
-import Collectionuser from './pages/Collectionuser';
 import Create from './pages/Create';
 import Details from './pages/Details';
 import Edit from './pages/Edit';
@@ -25,9 +24,6 @@ function App() {
             </Route>
             <Route path="/Login">
               <Login />
-            </Route>
-            <Route path="/Collectionuser">
-              <Collectionuser />
             </Route>
             <Route path="/Details/:id"> 
               <Details />
